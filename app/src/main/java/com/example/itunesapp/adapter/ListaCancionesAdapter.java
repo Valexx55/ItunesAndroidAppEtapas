@@ -1,5 +1,8 @@
 package com.example.itunesapp.adapter;
 
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.itunesapp.R;
+import com.example.itunesapp.actividades.DetalleCancionActivity;
 import com.example.itunesapp.dto.Cancion;
 
 import java.util.List;
@@ -19,6 +23,7 @@ public class ListaCancionesAdapter extends RecyclerView.Adapter<CancionViewHolde
 
 
     public ListaCancionesAdapter() {}
+
 
     public ListaCancionesAdapter(List<Cancion> lista_canciones) {
         this.lista_canciones = lista_canciones;
@@ -42,6 +47,9 @@ public class ListaCancionesAdapter extends RecyclerView.Adapter<CancionViewHolde
             View itemView = inflater.inflate(R.layout.fila_cancion, parent, false);
             cancionViewHolder = new CancionViewHolder(itemView);
 
+
+
+
         return cancionViewHolder;
 
     }
@@ -50,7 +58,10 @@ public class ListaCancionesAdapter extends RecyclerView.Adapter<CancionViewHolde
     public void onBindViewHolder(@NonNull CancionViewHolder cancion_view_holder, int position) {
 
         Cancion cancion = this.lista_canciones.get(position);
-        cancion_view_holder.cargarCancionEnHolder(cancion);
+        cancion_view_holder.cargarCancionEnHolder(cancion, position);
+
+        //cancion_view_holder.itemView.setTag(position);
+
 
     }
 

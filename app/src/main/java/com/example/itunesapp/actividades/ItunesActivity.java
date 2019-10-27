@@ -1,13 +1,16 @@
 package com.example.itunesapp.actividades;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -26,7 +29,7 @@ import com.example.itunesapp.util.InternetUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItunesActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, SearchView.OnCloseListener{
+public class ItunesActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, SearchView.OnCloseListener {
 
 
 
@@ -158,5 +161,18 @@ public class ItunesActivity extends AppCompatActivity implements SearchView.OnQu
         Log.d("MIAPP", "onClose ");
         vaciarLista ();//el usuario toca la equis, limpia la caja de búsqueda. Yo, limpio la lista.
         return false;
+    }
+
+
+    public void verdetalle(View view) {
+        Log.d("MIAPP", "verdetalle ");
+
+        int posicion = (int)view.getTag();
+        Cancion cancion = lista_canciones.get(posicion);
+
+        Intent intent_detalle = new Intent(this, DetalleCancionActivity.class);
+        intent_detalle.putExtra("cancion", cancion);
+        startActivity(intent_detalle);
+
     }
 }
