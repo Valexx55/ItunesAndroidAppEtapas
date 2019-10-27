@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ItunesActivity">
+    tools:context=".actividades.ItunesActivity">
 
     <LinearLayout
-
-        android:layout_height="4dp"
-        android:layout_marginTop="32dp"
+        android:id="@+id/caja_barra_progreso"
         android:layout_width="match_parent"
+        android:layout_height="0px"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
+        android:layout_weight="3">
         <ProgressBar
             android:id="@+id/barra_progreso"
             style="?android:attr/progressBarStyleHorizontal"
@@ -23,7 +21,35 @@
             android:layout_height="match_parent"
             android:indeterminate="true" />
 
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/caja_busqueda"
+        android:layout_width="match_parent"
+        android:layout_weight="12"
+        android:orientation="vertical"
+        android:layout_height="0px">
+
+        <SearchView
+            android:id="@+id/lupa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:queryHint="Busca artista o canción..."></SearchView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="83"
+        android:orientation="vertical"
+        android:id="@+id/lista_resultados"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="5dp"
+        android:layout_height="0px">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--le dibujamos un fondo al layaout de la fila-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle" >
+    <!--color de fondo-->
+    <solid android:color="@color/colorFondoFilaGris" />
+    <!--redondeo de esquinas-->
+    <corners android:radius="20dp" />
+    <!--color del borde y ancho-->
+    <stroke android:width="2dp" android:color="@color/colorBordeFucsia" />
+
+</shape>
