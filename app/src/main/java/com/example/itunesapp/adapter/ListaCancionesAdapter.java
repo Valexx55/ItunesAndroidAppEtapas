@@ -12,8 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.itunesapp.R;
 import com.example.itunesapp.actividades.DetalleCancionActivity;
+import com.example.itunesapp.actividades.ListaCancionesActivity;
 import com.example.itunesapp.dto.Cancion;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListaCancionesAdapter extends RecyclerView.Adapter<CancionViewHolder> {
@@ -48,6 +50,23 @@ public class ListaCancionesAdapter extends RecyclerView.Adapter<CancionViewHolde
             cancionViewHolder = new CancionViewHolder(itemView);
 
 
+            cancionViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int poscion = (int)view.getTag();
+
+                    Log.d("MIAPP", "Ha tocado la fila " +poscion);
+
+                    Intent intent = new Intent(view.getContext(), ListaCancionesActivity.class);
+                    intent.putParcelableArrayListExtra("lista_canciones", (ArrayList<Cancion>)lista_canciones);//me pide el subtipoArray. lo casteo de List a ArrayList y ya
+                    intent.putExtra("posicion", poscion);
+
+                    view.getContext().startActivity(intent);
+
+
+                }
+            });
+
 
 
         return cancionViewHolder;
@@ -60,7 +79,7 @@ public class ListaCancionesAdapter extends RecyclerView.Adapter<CancionViewHolde
         Cancion cancion = this.lista_canciones.get(position);
         cancion_view_holder.cargarCancionEnHolder(cancion, position);
 
-        //cancion_view_holder.itemView.setTag(position);
+        cancion_view_holder.itemView.setTag(position);
 
 
     }

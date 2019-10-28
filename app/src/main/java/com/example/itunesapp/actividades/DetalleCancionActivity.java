@@ -32,12 +32,7 @@ public class DetalleCancionActivity extends AppCompatActivity implements MediaPl
     private Timer timer;
 
 
-    private void initActividad ()
-    {
-        Picasso.get().load(cancion.getArtworkUrl100()).into(imagen_disco);
-        this.artista_cancion.setText(cancion.getArtistName());
-        this.titulo_cancion.setText(cancion.getTrackName());
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +61,13 @@ public class DetalleCancionActivity extends AppCompatActivity implements MediaPl
 
 
 
+    }
+
+    private void initActividad ()
+    {
+        Picasso.get().load(cancion.getArtworkUrl100()).into(imagen_disco);
+        this.artista_cancion.setText(cancion.getArtistName());
+        this.titulo_cancion.setText(cancion.getTrackName());
     }
 
     public void reproducir(View view) {

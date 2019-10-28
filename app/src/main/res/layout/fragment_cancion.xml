@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="10"
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp"
+        android:gravity="bottom|center_horizontal">
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:id="@+id/titulo_cancion"
+            android:textSize="28sp"
+            android:background="@color/colorRotuloDetalle"
+            android:layout_gravity="center"
+            android:text="YOUNG Y bEAUTIFUL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <TextView
+            android:textSize="18sp"
+            android:background="@color/colorRotuloDetalle"
+            android:gravity="center_horizontal"
+            android:id="@+id/artista_cancion"
+            android:text="LANA DEL REY "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+        </TextView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="25"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_gravity="center_vertical|center"
+            android:id="@+id/imagen_disco"
+            android:src="@drawable/lana"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY">
+
+        </ImageView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="0px"
+        android:layout_weight="20"
+        android:gravity="center|top">
+
+        <ImageView
+            android:id="@+id/play_pause"
+            android:background="@color/colorFondoFilaGris"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_play_96dp"
+            android:onClick="reproducir">
+
+        </ImageView>
+        <SeekBar
+            android:layout_marginTop="5dp"
+            android:id="@+id/seekbar"
+            android:clickable="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="30000"></SeekBar>
+    </LinearLayout>
+
+
+</LinearLayout>

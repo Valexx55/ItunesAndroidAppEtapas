@@ -12,9 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".actividades.DetalleCancionActivity"
+        <activity android:name=".actividades.ListaCancionesActivity"
+            android:label="Modo carrusel"
             android:configChanges="keyboard|orientation|screenSize"
             android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".actividades.DetalleCancionActivity"
+            android:label="Detalle"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".actividades.ItunesActivity"
             android:configChanges="keyboard|orientation|screenSize"
